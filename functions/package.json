@@ -1,0 +1,51 @@
+{
+  "name": "@alip/functions-pk",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "rm -rf lib/ && tsc",
+    "serve": "npm run build && firebase serve --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log",
+    "start2": "nodemon",
+    "onlyexportliveALP2": "export GOOGLE_APPLICATION_CREDENTIALS='/Users/alipusman/Documents/keystore/asg-ops-firebase-adminsdk.json' && firebase use asg-ops"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@firebase/firestore-types": "^1.9.0",
+    "@google-cloud/pubsub": "^2.18.4",
+    "@google-cloud/tasks": "^2.5.0",
+    "@google-cloud/vision": "^4.1.0",
+    "axios": "^0.21.1",
+    "compression": "^1.7.4",
+    "convert-excel-to-json": "^1.7.0",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.0.0",
+    "express": "^4.18.2",
+    "express-ip": "^1.0.3",
+    "firebase-admin": "^12.0.0",
+    "firebase-functions": "^4.8.0",
+    "helmet": "^3.21.2",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.34",
+    "request-promise": "^4.2.5"
+  },
+  "devDependencies": {
+    "@googlemaps/js-api-loader": "^1.13.4",
+    "@types/compression": "^1.7.5",
+    "@types/lodash": "^4.14.202",
+    "@types/node": "^20.10.4",
+    "eslint-plugin-lodash": "^6.0.0",
+    "firebase-functions-test": "^0.2.0",
+    "nodemon": "^2.0.2",
+    "tslint": "^5.12.0",
+    "typescript": "^5.3.3"
+  },
+  "private": true
+}

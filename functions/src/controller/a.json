@@ -1,0 +1,69 @@
+[
+    {
+        "nama": "MITRA 10 FATMAWATI",
+        "alamat_scan": "JL. RS. FATMAWATI RAYA NO.1, RW.7, GANDARIA UTARA, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12140",
+        "noDN": "TR2210044000000333",
+        "lm": null,
+        "kirimKe": "MITRA 10 FATMAWATI",
+        "latlg": [
+            "JL. RS. FATMAWATI RAYA NO.1, RW.7, GANDARIA UTARA, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12140"
+        ],
+        "noTelfon": "-",
+        "noNP": "-",
+        "gabungan": false,
+        "np_gabungan": [],
+        "options": true,
+        "value": "JL. RS. FATMAWATI RAYA NO.1, RW.7, GANDARIA UTARA, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12140"
+    },
+    {
+        "nama": "MITRA 10 JATIMAKMUR",
+        "alamat_scan": "JL. RAYA JATIKRAMAT NO.115, RT.001/RW.013, JATIMAKMUR, KEC. PONDOKGEDE, KOTA BKS, JAWA BARAT 17413",
+        "noDN": "TR2210044000000333",
+        "lm": null,
+        "kirimKe": "MITRA 10 JATIMAKMUR",
+        "latlg": [
+            "JL. RAYA JATIKRAMAT NO.115, RT.001/RW.013, JATIMAKMUR, KEC. PONDOKGEDE, KOTA BKS, JAWA BARAT 17413"
+        ],
+        "noTelfon": "-",
+        "noNP": "-",
+        "gabungan": false,
+        "np_gabungan": [],
+        "options": true,
+        "value": "JL. RAYA JATIKRAMAT NO.115, RT.001/RW.013, JATIMAKMUR, KEC. PONDOKGEDE, KOTA BKS, JAWA BARAT 17413"
+    },
+    {
+        "nama": "MITRA 10 KALIMALANG BARU",
+        "alamat_scan": "JL. RAYA KALIMALANG NO.007, RT.010/RW.002, JAKASAMPURNA, KEC. BEKASI BAR., KOTA BKS, JAWA BARAT 17145",
+        "noDN": "TR2210044000000333",
+        "lm": null,
+        "kirimKe": "MITRA 10 KALIMALANG BARU",
+        "latlg": [
+            "JL. RAYA KALIMALANG NO.007, RT.010/RW.002, JAKASAMPURNA, KEC. BEKASI BAR., KOTA BKS, JAWA BARAT 17145"
+        ],
+        "noTelfon": "-",
+        "noNP": "-",
+        "gabungan": false,
+        "np_gabungan": [],
+        "options": true,
+        "value": "JL. RAYA KALIMALANG NO.007, RT.010/RW.002, JAKASAMPURNA, KEC. BEKASI BAR., KOTA BKS, JAWA BARAT 17145"
+    },
+    {
+        "nama": "MITRA 10 KOTA HARAPAN INDAH",
+        "alamat_scan": "MITRA 10 KOTA HARAPAN INDAH",
+        "noDN": "TR2210044000000212",
+        "lm": "",
+        "kirimKe": "MITRA 10 KOTA HARAPAN INDAH",
+        "latlg": [
+            {
+                "lng": 106.9728280374377,
+                "lat": -6.183669888952252
+            }
+        ],
+        "noTelfon": "-",
+        "noNP": "",
+        "gabungan": false,
+        "np_gabungan": [],
+        "options": true,
+        "value": "9B KOTA NO, JL. HARAPAN INDAH BOULEVARD, RT.005/RW.010, PEJUANG KEC, KECAMATAN MEDAN SATRIA, KOTA BKS, JAWA BARAT 17131"
+    }
+]

@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "lib",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es6",
+    "lib": [
+      "es2016",
+      "dom",
+      "es6",
+      "es2017"
+    ],
+  },
+  "compileOnSave": true,
+  "include": [
+    "src", 
+    "app.js"  ]
+}
