@@ -4,7 +4,6 @@ import { isAuthenticated } from "../middleware/authMiddleware";
 import { isAuthorized } from "../middleware/authorizationMiddleware";
 import cors from "cors"
 import compression from "compression"
-import helmet from "helmet"
 import saldoController from  "../controller/saldoController"
 
 //Proses CRUD User dan CREW
@@ -26,14 +25,13 @@ class SaldoModule {
             preflightContinue: false
           };
         this.app.use(compression())
-        this.app.use(helmet())
         this.app.use(cors(options))
     }
     
     protected routes() : void {
         this.app.post('/tariksaldo',
             isAuthenticated,
-            isAuthorized({ hasRole: ['superadmin','administrator', 'crew'] }),
+            isAuthorized({ hasRole: ['administrator'] }),
             saldoController.buattariksaldo
         );
 

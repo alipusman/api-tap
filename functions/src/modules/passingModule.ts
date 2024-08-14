@@ -3,7 +3,6 @@ import * as db_1 from "../db"
 
 import cors from "cors"
 import compression from "compression"
-import helmet from "helmet"
 import passingC from  "../controller/passingController"
 
 //Proses CRUD User dan CREW
@@ -25,7 +24,6 @@ class passingMod {
             preflightContinue: false
           };
         this.app.use(compression())
-        this.app.use(helmet())
         this.app.use(cors(options))
     }
     

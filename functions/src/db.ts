@@ -1,15 +1,13 @@
 import * as functions from 'firebase-functions'
 import * as admin from 'firebase-admin'
 const { CloudTasksClient } = require("@google-cloud/tasks");
-const vision = require('@google-cloud/vision');
 
 admin.initializeApp({
   credential: admin.credential.applicationDefault(),
-  databaseURL: "https://asg-ops-default-rtdb.asia-southeast1.firebasedatabase.app"
+  databaseURL: "https://tap-erp-94e6c-default-rtdb.firebaseio.com"
 
 });
 
-const clientv = new vision.ImageAnnotatorClient();
 
 const db = admin.firestore()
 const dbrealtime = admin.database();
@@ -20,7 +18,6 @@ export {
     CloudTasksClient,
     db,
     dbrealtime,
-    clientv,
     // parentque,
     // url_taskhandler, 
     // url_taskhandlerrdo, 

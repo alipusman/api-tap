@@ -4,7 +4,6 @@ import { isAuthenticated } from "../middleware/authMiddleware";
 import { isAuthorized } from "../middleware/authorizationMiddleware";
 import cors from "cors"
 import compression from "compression"
-import helmet from "helmet"
 import setUserController from  "../controller/setUserController"
 
 //Proses CRUD User dan CREW
@@ -26,67 +25,44 @@ class SetUser {
             preflightContinue: false
           };
         this.app.use(compression())
-        this.app.use(helmet())
         this.app.use(cors(options))
     }
     
     protected routes() : void {
         this.app.post('/users',
             isAuthenticated,
-            isAuthorized({ hasRole: ['superadmin','administrator'] }),
+            isAuthorized({ hasRole: ['administrator'] }),
             setUserController.createUser
+        );
+        this.app.post('/users/createpegawai',
+        isAuthenticated,
+        isAuthorized({ hasRole: ['administrator', 'Admin'] }),
+        setUserController.createPegawai
+    );
+        this.app.post('/update/users',
+            isAuthenticated,
+            isAuthorized({ hasRole: ['administrator'] }),
+            setUserController.updateuser
         );
 
         this.app.post('/delete/users',
             isAuthenticated,
-            isAuthorized({ hasRole: ['superadmin','administrator'] }),
+            isAuthorized({ hasRole: ['administrator'] }),
             setUserController.deleteUser
         );
 
         this.app.post('/users/privilege',
             isAuthenticated,
-            isAuthorized({ hasRole: ['superadmin','administrator'] }),
+            isAuthorized({ hasRole: ['administrator'] }),
             setUserController.setPrivilege
         );
 
         this.app.post('/users/privilege/get',
             isAuthenticated,
-            isAuthorized({ hasRole: ['superadmin','administrator','admin'] }),
+            isAuthorized({ hasRole: ['administrator','admin'] }),
             setUserController.getPrivilege
         );
 
-        this.app.post('/users/create/crew',
-            isAuthenticated,
-            isAuthorized({ hasRole: ['superadmin','administrator', 'admin', 'korlap', 'korwil'] }),
-            setUserController.createCrew
-        );
-        this.app.post('/users/update/crew',
-        isAuthenticated,
-        isAuthorized({ hasRole: ['superadmin','administrator', 'admin', 'korlap', 'korwil'] }),
-        setUserController.updateCrew
-    );
-        
-        this.app.post('/users/delete/crew',
-            isAuthenticated,
-            isAuthorized({ hasRole: ['superadmin','administrator', 'admin', 'korlap', 'korwil'] }),
-            setUserController.deleteCrew
-        );
-        
-        this.app.post('/users/updateclaim',
-            isAuthenticated,
-            isAuthorized({ hasRole: ['superadmin','administrator'] }),
-            setUserController.updateclaims
-        );
-
-        this.app.post('/getToken',
-            setUserController.getToken
-        );
-
-        this.app.post('/pindah/store',
-            isAuthenticated,
-            isAuthorized({ hasRole: ['superadmin','administrator'] }),
-            setUserController.pindahStore
-        );
 
     };
             
