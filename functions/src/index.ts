@@ -1,6 +1,6 @@
 export {setUserModule} from './modules/userModule'
 
-export {area} from './modules/area'
+export {ondeleteAbsen} from './modules/trigger/absentrigger'
 
 // export {saldomodule} from './modules/saldoModule'
 // export {ondeletecpdriver} from './modules/trigger/cpdrivertrigger'

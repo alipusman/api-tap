@@ -94,7 +94,7 @@ class setUser { //satu
     createPegawai = async (req: Request, res: Response) => {
         console.log('di createuse')
         try {
-            const { displayName, email, roleReq, id_nik, jabatan, id_pic, no_telfon } = req.body
+            const { displayName, email, roleReq, id_nik, jabatan, id_pic, no_telfon, type_gaji } = req.body
             if (!email || !roleReq || !displayName) {
                 console.log(99)
                 return res.status(400).send({ message: 'Missing fields', status: false })
@@ -109,7 +109,9 @@ class setUser { //satu
                 role: roleReq.split(' ').join(''),
                 displayName,
                 email,
-                uid
+                uid,
+                type_gaji,
+                nik : id_nik
             })
 
             const datanew = {
@@ -124,6 +126,7 @@ class setUser { //satu
                 displayName: displayName,
                 created_at: moment().unix(),
                 created_by: res.locals.email,
+                type_gaji,
                 uid
             }
             await db.collection('m_pegawai').doc(id_nik).set(datanew)
