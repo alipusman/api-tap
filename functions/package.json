@@ -11,7 +11,8 @@
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
     "start2": "nodemon",
-    "onlyexportliveALP2": "export GOOGLE_APPLICATION_CREDENTIALS='/Users/alipusman/Documents/keystore/tap-erpapi.json' && firebase use tap-erp-94e6c"
+    "onlyexportdemoALP2": "export GOOGLE_APPLICATION_CREDENTIALS='/Users/alipusman/Documents/keystore/tap-erpapi.json' && firebase use tap-erp-94e6c",
+    "onlyexportliveALP2": "export GOOGLE_APPLICATION_CREDENTIALS='/Users/alipusman/Documents/keystore/live-tap-firebase.json' && firebase use live-tap"
   },
   "engines": {
     "node": "20"
