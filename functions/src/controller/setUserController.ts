@@ -71,14 +71,14 @@ class setUser { //satu
 
 
 
-            await db.collection('users').doc(uid).set({
-                email: email,
-                role: roleReq.split(' ').join(''),
-                displayName: displayName,
-                created_at: moment().unix(),
-                created_by: res.locals.email,
-                uid
-            })
+            // await db.collection('users').doc(uid).set({
+            //     email: email,
+            //     role: roleReq.split(' ').join(''),
+            //     displayName: displayName,
+            //     created_at: moment().unix(),
+            //     created_by: res.locals.email,
+            //     uid
+            // })
 
             return res.status(200).send({ message: 'Berhasil update', status: true });
         } catch (err) {
@@ -94,7 +94,7 @@ class setUser { //satu
     createPegawai = async (req: Request, res: Response) => {
         console.log('di createuse')
         try {
-            const { displayName, email, roleReq, id_nik, jabatan, id_pic, no_telfon, type_gaji } = req.body
+            const { displayName, email, roleReq, id_nik, jabatan, id_pic, no_telfon, type_gaji, lembur , telat } = req.body
             if (!email || !roleReq || !displayName) {
                 console.log(99)
                 return res.status(400).send({ message: 'Missing fields', status: false })
@@ -111,7 +111,9 @@ class setUser { //satu
                 email,
                 uid,
                 type_gaji,
-                nik : id_nik
+                nik : id_nik,
+                lembur,
+                telat
             })
 
             const datanew = {
@@ -127,7 +129,58 @@ class setUser { //satu
                 created_at: moment().unix(),
                 created_by: res.locals.email,
                 type_gaji,
-                uid
+                uid,
+                lembur,telat
+            }
+            await db.collection('m_pegawai').doc(id_nik).set(datanew)
+            await db.collection('users').doc(uid).set(datanew)
+
+            return res.status(200).send({ message: 'Berhasil update', status: true });
+        } catch (err) {
+            return handleError(res, err)
+        }
+
+        function handleError(res: Response, err: any) {
+            console.log(err)
+            return res.status(500).send({ message: 'Internal server error', status: false });
+        }
+    }
+    updatePegawai = async (req: Request, res: Response) => {
+        console.log('di createuse')
+        try {
+            const { uid,displayName, email, roleReq, id_nik, jabatan, id_pic, no_telfon, type_gaji, lembur , telat } = req.body
+            if (!email || !roleReq || !displayName) {
+                console.log(99)
+                return res.status(400).send({ message: 'Missing fields', status: false })
+            }
+
+          
+            await admin.auth().setCustomUserClaims(uid, {
+                role: roleReq.split(' ').join(''),
+                displayName,
+                email,
+                uid,
+                type_gaji,
+                nik : id_nik,
+                lembur,
+                telat
+            })
+
+            const datanew = {
+                no_telfon,
+                email: email,
+                role: roleReq.split(' ').join(''),
+                nama : displayName,
+                jabatan,
+                id_pic,
+                id_nik,
+                divisi : roleReq.split(' ').join(''),
+                displayName: displayName,
+                created_at: moment().unix(),
+                created_by: res.locals.email,
+                type_gaji,
+                uid,
+                lembur,telat
             }
             await db.collection('m_pegawai').doc(id_nik).set(datanew)
             await db.collection('users').doc(uid).set(datanew)

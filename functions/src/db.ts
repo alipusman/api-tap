@@ -7,6 +7,11 @@ admin.initializeApp({
   databaseURL: "https://tap-erp-94e6c-default-rtdb.firebaseio.com"
 
 });
+// admin.initializeApp({
+//   credential: admin.credential.applicationDefault(),
+//   databaseURL: "https://live-tap-default-rtdb.asia-southeast1.firebasedatabase.app"
+
+// });
 
 
 const db = admin.firestore()
