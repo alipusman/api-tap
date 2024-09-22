@@ -148,7 +148,7 @@ class setUser { //satu
     updatePegawai = async (req: Request, res: Response) => {
         console.log('di createuse')
         try {
-            const { uid,displayName, email, roleReq, id_nik, jabatan, id_pic, no_telfon, type_gaji, lembur , telat } = req.body
+            const { uid,displayName, email, roleReq, id_nik, jabatan, no_telfon, type_gaji, lembur , telat } = req.body
             if (!email || !roleReq || !displayName) {
                 console.log(99)
                 return res.status(400).send({ message: 'Missing fields', status: false })
@@ -172,7 +172,6 @@ class setUser { //satu
                 role: roleReq.split(' ').join(''),
                 nama : displayName,
                 jabatan,
-                id_pic,
                 id_nik,
                 divisi : roleReq.split(' ').join(''),
                 displayName: displayName,
@@ -182,8 +181,8 @@ class setUser { //satu
                 uid,
                 lembur,telat
             }
-            await db.collection('m_pegawai').doc(id_nik).set(datanew)
-            await db.collection('users').doc(uid).set(datanew)
+            await db.collection('m_pegawai').doc(id_nik).update(datanew)
+            await db.collection('users').doc(uid).update(datanew)
 
             return res.status(200).send({ message: 'Berhasil update', status: true });
         } catch (err) {

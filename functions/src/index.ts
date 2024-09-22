@@ -1,6 +1,9 @@
 export {setUserModule} from './modules/userModule'
 
-export {ondeleteAbsen} from './modules/trigger/absentrigger'
+export {ondeleteAbsen , oncreateabsen} from './modules/trigger/absentrigger'
+
+export {ondeletepegawai} from './modules/trigger/pegawaiTrigger'
+
 
 // export {saldomodule} from './modules/saldoModule'
 // export {ondeletecpdriver} from './modules/trigger/cpdrivertrigger'
