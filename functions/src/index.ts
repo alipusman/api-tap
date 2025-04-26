@@ -1,9 +1,18 @@
 export {setUserModule} from './modules/userModule'
 
-export {ondeleteAbsen , oncreateabsen} from './modules/trigger/absentrigger'
+export {ondeleteAbsen , oncreateabsen, onupdateabsen, ondeleteabsenpulangdalamjamkerja,ondeleteabsensi_luararea,ondeleteabsensi_pulang_luararea,ondeleteabsensimasukdalamjamkerja} from './modules/trigger/absentrigger'
 
 export {ondeletepegawai} from './modules/trigger/pegawaiTrigger'
 
+export {oncreatefcmtoken,ondeletfcmtoken,onupdatefcmToken} from './modules/trigger/fcmtokenTrigger'
+export {oncreatelogPesanpreorder, onupdatepreordernotif ,onupdatepreorderassgindrafter} from './modules/trigger/ordertrigger'
+export {oncreatepreordertoken, ondeletpreorderfcmtoken} from './modules/trigger/preorderlogtrigger'
+export {oncreatestockcoil} from './modules/trigger/stockkoil'
+export {coilmodule} from './modules/coilModule'
+export {ondeleteWO} from './modules/trigger/woTrigger'
+
+
+export {ongeneratepricing} from './modules/trigger/emailtrigger'
 
 // export {saldomodule} from './modules/saldoModule'
 // export {ondeletecpdriver} from './modules/trigger/cpdrivertrigger'

@@ -79,4 +79,4 @@ class SetUser {
 const app = new SetUser().app
 
 
-export const setUserModule = db_1.functions.region('us-central1').https.onRequest(app);
+export const setUserModule = db_1.functions.https.onRequest(app);

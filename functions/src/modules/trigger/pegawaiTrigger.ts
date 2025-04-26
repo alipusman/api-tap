@@ -2,14 +2,13 @@
 import { db, functions } from "../../db"
 import { getAuth } from "firebase-admin/auth"
 
-export const ondeletepegawai = functions.firestore
-    .document('m_pegawai/{idpegawai}')
-    .onDelete(async (snap: any, context) => {
+export const ondeletepegawai = functions.firestore.onDocumentDeleted('m_pegawai/{idpegawai}',( context) => {
         return new Promise<void>(async (resolve, reject) => {
             try {
                 const auth = getAuth()
-                const data = snap.data()
-                const iduser = data.uid
+                const snap = context.data
+                const data = snap?.data()
+                const iduser = data!.uid
                 const absenuserRef = db.collection('users').doc(iduser)
 
                 const batch = db.batch()

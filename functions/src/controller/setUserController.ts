@@ -71,14 +71,14 @@ class setUser { //satu
 
 
 
-            // await db.collection('users').doc(uid).set({
-            //     email: email,
-            //     role: roleReq.split(' ').join(''),
-            //     displayName: displayName,
-            //     created_at: moment().unix(),
-            //     created_by: res.locals.email,
-            //     uid
-            // })
+            await db.collection('users').doc(uid).set({
+                email: email,
+                role: roleReq.split(' ').join(''),
+                displayName: displayName,
+                created_at: moment().unix(),
+                created_by: res.locals.email,
+                uid
+            })
 
             return res.status(200).send({ message: 'Berhasil update', status: true });
         } catch (err) {

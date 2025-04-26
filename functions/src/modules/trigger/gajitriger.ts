@@ -1,13 +1,12 @@
 import { db, functions } from "../../db"
 
-export const ondeleteAbsen = functions.firestore
-    .document('absensi/{idabsen}')
-    .onCreate(async (snap: any, context) => {
+export const ondeleteAbsen = functions.firestore.onDocumentCreated('absensi/{idabsen}', (context) => {
         return new Promise<void>(async (resolve, reject) => {
             try {
                 const idabsen = context.params.idabsen
-                const data = snap.data()
-                const iduser =  data.iduser
+                const snap = context.data
+                const data = snap?.data()
+                const iduser =  data!.iduser
                 const absenuserRef = db.collection('users').doc(iduser).collection('absensi').doc(idabsen)
                 const batch = db.batch()
 
